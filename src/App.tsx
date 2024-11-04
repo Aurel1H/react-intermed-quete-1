@@ -17,14 +17,13 @@ function App() {
   const [employee, setEmployee] = useState(sampleEmployee);
 
   const getEmployee = () => {
-    // Envoi de la requête
+    // Send the request
     fetch("https://randomuser.me/api?nat=en")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
         setEmployee(data.results[0]);
       })
-      .catch((error) => console.error('Erreur lors de la récupération de l\'employé :', error));
   };
 
   return (
